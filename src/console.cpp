@@ -3,7 +3,7 @@
 Console::Console()
 	: color(static_cast<int>(Color::COLOR_WHITE) | static_cast<int>(Color::COLOR_BLACK) << 4),
 	windowWidth(80),
-	windowHeight(26)
+	windowHeight(25)
 {
 }
 
@@ -13,6 +13,10 @@ Console::Console(const size_t windowWidth, const size_t windowHeight)
 	windowHeight(windowHeight)
 {
 }
+
+Console::~Console()
+{
+} 
 
 uint16_t Console::printColorful(char c)
 {
@@ -69,11 +73,21 @@ void Console::print(char* str)
 			column = 0;
 		}
 
-		if (row > windowHeight)
+		if (row >= windowHeight)
 		{
 			clearScreen();
 			row = 0;
 			column = 0;
 		}
 	}
+}
+
+const size_t Console::getWindowWidth()
+{
+	return windowWidth;
+}
+
+const size_t Console::getWindowHeight()
+{
+	return windowHeight;
 }

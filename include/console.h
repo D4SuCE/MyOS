@@ -18,8 +18,11 @@ private:
 public:
 	Console();
 	Console(const size_t windowWidth, const size_t windowHeight);
+	~Console();
 	size_t strlen(const char* str);
 	void setColor(Color foreground, Color background);
 	void clearScreen();
 	void print(char* str);
+	const size_t getWindowWidth();
+	const size_t getWindowHeight();
 };

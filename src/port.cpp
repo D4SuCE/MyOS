@@ -1,4 +1,3 @@
-
 #include "../include/port.h"
 
 Port::Port(uint16_t portNumber)

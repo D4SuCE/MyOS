@@ -1,8 +1,8 @@
-GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
+GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wno-write-strings
 ASPARAMS = --32
 LDPARAMS = -melf_i386
 
-objects = gen/loader.o gen/console.o gen/gdt.o gen/port.o gen/interrupts.o gen/interruptstubs.o gen/kernel.o
+objects = gen/loader.o gen/console.o gen/gdt.o gen/port.o gen/interrupts.o gen/interruptstubs.o gen/keyboard.o gen/mouse.o gen/driver.o gen/kernel.o
 pathDir = gen
 
 $(pathDir):
@@ -36,4 +36,4 @@ run: mykernel.iso
 
 .PHONY: clean
 clean:
-	rm -rf $(objects) mykernel.bin mykernel.iso gen
+	rm -rf mykernel.bin mykernel.iso gen
