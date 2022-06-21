@@ -1,7 +1,5 @@
 #include "../include/interrupts.h"
 
-void printf(char* str);
-
 InterruptHandler::InterruptHandler(uint8_t interruptNumber, InterruptManager* interruptManager)
 {
 	this->interruptNumber = interruptNumber;
